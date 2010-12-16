@@ -12,16 +12,16 @@ CanvasRenderingContext2D.prototype.roundedRectShadow =
  * @param {Number} height 
  * 		The height of the rectangle
  * @param {Number} radiusBottomLeft
- * 		The corner radius of the bottom left corner. Defaults to 5;
+ * 		The corner radius of the bottom left corner. Defaults to 0;
  * @param {Number} radiusBottomRight
- * 		The corner radius of the bottom right corner. Defaults to 5;
+ * 		The corner radius of the bottom right corner. Defaults to 0;
  */
 function(x, y, width, height, radiusBottomLeft, radiusBottomRight) {
   	if (typeof radiusBottomLeft === "undefined") {
-	    radius = 5;
+	    radius = 0;
 	}
 	if (typeof radiusBottomRight === "undefined") {
-	    radius = 5;
+	    radius = 0;
 	}
 	
 	this.beginPath();
@@ -35,7 +35,7 @@ function(x, y, width, height, radiusBottomLeft, radiusBottomRight) {
 	this.quadraticCurveTo(x, y + height, x, y + height - radiusBottomLeft);
 	
 	this.stroke();
-}
+};
 
 CanvasRenderingContext2D.prototype.roundedRect = 
  
@@ -50,28 +50,28 @@ CanvasRenderingContext2D.prototype.roundedRect =
  * @param {Number} height 
  * 		The height of the rectangle
  * @param {Number} radiusBottomLeft
- * 		The corner radius of the bottom left corner. Defaults to 5;
+ * 		The corner radius of the bottom left corner. Defaults to 0;
  * @param {Number} radiusBottomRight
- * 		The corner radius of the bottom right corner. Defaults to 5;
+ * 		The corner radius of the bottom right corner. Defaults to 0;
  * @param {Number} radiusTopRight
- * 		The corner radius of the top right corner. Defaults to 5;
+ * 		The corner radius of the top right corner. Defaults to 0;
  * @param {Number} radiusTopLeft
- * 		The corner radius of the top left corner. Defaults to 5;
+ * 		The corner radius of the top left corner. Defaults to 0;
  * @param {Boolean} fill 
  * 		Whether to fill the rectangle. Defaults to false.
  */
 function(x, y, width, height, radiusBottomLeft, radiusBottomRight, radiusTopRight, radiusTopLeft, fill, stroke) {
   	if (typeof radiusBottomLeft === "undefined") {
-	    radius = 5;
+	    radiusBottomLeft = 0;
 	}
 	if (typeof radiusBottomRight === "undefined") {
-	    radius = 5;
+	    radiusBottomRight = 0;
 	}
 	if (typeof radiusTopRight === "undefined") {
-	    radius = 5;
+	    radiusTopRight = 0;
 	}
 	if (typeof radiusTopLeft === "undefined") {
-	    radius = 5;
+	    radiusTopLeft = 0;
 	}
 
 	if (typeof fill == "undefined" ) {
